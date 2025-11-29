@@ -99,7 +99,7 @@ Query 4 shows how much each guardian has paid in total and classifies them into 
 Query 5 shows how much each student has paid in total and pairs that with the guardian’s name. This helps staff quickly see which students generate the most revenue, review family payment histories, and prioritize follow-up with high- or low-paying accounts.
 
 ---
-## Visualizations
+## Claude Visualizations
 <img width="1285" height="650" alt="dashboard_screenshot" src="https://github.com/user-attachments/assets/37c42a62-876e-4e97-a148-e48e0db00cf5" />
 
 <img width="740" height="639" alt="visualization1" src="https://github.com/user-attachments/assets/95584880-1be0-417f-8a3c-734f708f7306" />
