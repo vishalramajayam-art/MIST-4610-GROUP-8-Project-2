@@ -52,77 +52,76 @@ This database is meant to help run a tutoring center by keeping track of student
 
 ## Queries
 
+| Feature / Query Type      | Query 1 | Query 2 | Query 3 | Query 4 | Query 5 |
+|---------------------------|:-------:|:-------:|:-------:|:-------:|:-------:|
+| Multiple table join       |    x    |    x    |    x    |    x    |    x    |
+| Left join                 |         |    x    |         |    x    |         |
+| Inner join                |    x    |         |    x    |         |    x    |
+| Group By / Aggregation    |    x    |    x    |    x    |    x    |    x    |
+| Subquery                  |         |         |    x    |         |         |
+| CASE logic                |         |         |         |    x    |         |
 
-| Feature                | Query 1 | Query 2 | Query 3 | Query 4 | Query 5 | Query 6 | Query 7 | Query 8 | Query 9 | Query 10 |
-|------------------------|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:--------:|:--------:|
-| multiple table join     |    X    |    X    |    X    |    X    |         |    X    |    X    |    X    |    X     |          |
-| subquery               |         |         |         |         |    X    |         |         |         |          |          |
-| GROUP BY              |    X    |    X    |    X    |    X    |         |         |         |         |          |          |
-| GROUP BY with HAVING   |         |    X    |    X    |    X    |         |         |         |         |          |          |
-| multi condition WHERE  |    X    |         |         |         |         |    X    |         |    X    |          |          |
-| built-in functions     |    X    |    X    |    X    |    X    |    X    |         |         |         |    X     |          |
+1. Using an inner join between the student, guardian, and payment tables, produce a report of active students and their guardians that shows each student’s maximum payment amount, but only for students who have made at least one payment greater than 200, ordered from highest to lowest maximum payment.
+atus is 'Active' and who have made at least one payment greater than 200. Group the results by student and guardian, and sort the results from the highest payment to the lowest.
 
-1. Write a query to list each student’s first name and last name, their guardian’s first name and last name, and the highest payment amount made by that student. Only include students whose status is 'Active' and who have made at least one payment greater than 200. Group the results by student and guardian, and sort the results from the highest payment to the lowest.
-   
-<img width="466" height="428" alt="query 1" src="https://github.com/user-attachments/assets/29c409cb-b52f-4dad-a7cc-f5d3c249b4cd" />
+<img width="263" height="299" alt="MIST 4610 query 1" src="https://github.com/user-attachments/assets/018e6633-d293-4d17-9cb7-b9670280fc37" />
+<img width="551" height="313" alt="MIST 4610 query 1 answers" src="https://github.com/user-attachments/assets/b2eb27a9-1617-4c6c-b2da-994585add27b" />
 
-Query 1 helps staff identify each active student who has made a high payment of over 200. It shows the student’s and guardian’s names along with the largest payment amount. This allows employees to quickly find top-paying active students and their guardians.
+Query 1 helps staff see which active students have made large payments (over 200). It lists the student and guardian names along with each student’s highest payment so employees can quickly focus on top-paying families.
 
-2. Write a query to show each tutor’s first name, last name, specialty, and the total number of sessions they have taught. Only include tutors who have taught at least 3 sessions. Group the results by tutor, and sort so that tutors with the highest number of sessions appear first, and then by tutor name.
-   
-<img width="491" height="423" alt="query 2" src="https://github.com/user-attachments/assets/1633df42-3bd0-414a-b2b3-81f57e2975e5" />
+2. Using a left outer join from guardians to their students and payments, create a monthly billing summary that shows, for each guardian and each calendar month, the total amount paid for all of their students. Group by the year and month of the payment date so you can see separate rows per month, and include guardians even if they have no payments. Order the result by guardian and then by year and month.
 
-Query 2 shows which tutors have taught at least 3 sessions, along with their specialty and total sessions taught. This helps management recognize experienced tutors and assign classes more effectively.
+<img width="341" height="416" alt="MIST 4610 query 2" src="https://github.com/user-attachments/assets/f8219d8f-d6b4-40d0-a6b6-a8ac6c1a1f4d" />
+<img width="548" height="309" alt="MIST 4610 query 2 answers" src="https://github.com/user-attachments/assets/42a42eb4-2a8a-4a8c-aa03-8a43cc970bed" />
 
-3. Write a query to list each plan’s name and session_limit along with the total amount paid by all students on that plan. Only include plans where the total paid is greater than 1000 and where session_limit is at least 4. Group the results by plan, and order by the total paid in descending order.
-   
-<img width="473" height="430" alt="query 3" src="https://github.com/user-attachments/assets/4011e758-c844-44e7-b328-8fb2d3eae28a" />
+Query 2 summarizes how much each guardian pays per month across all of their students. This makes it easy for the office to review monthly revenue by family, spot unusually high or low months, and follow up on billing trends.
 
-Query 3 displays each tutoring plan’s name, session limit, and the total payments made by students under that plan. It highlights plans bringing in more than 1000 in revenue and those offering 4 or more sessions, helping administrators track profitable plans.
+3. Using an inner join between the tutor and session tables, list all tutors whose hourly rate is higher than the average hourly rate for their specialty and who have taught at least 2 sessions. For each tutor, show their name, specialty, hourly rate, and the total number of sessions they have taught. Order the results by specialty and then by hourly rate in descending order.
 
-4. Write a query to list each classroom’s room_name and capacity, the total number of sessions that took place in that classroom, and the number of distinct tutors who taught in that classroom. Only include classrooms where at least 3 different tutors have taught. Group the results by classroom, and order the results by the number of distinct tutors (highest first), then by room_name.
-   
-<img width="482" height="428" alt="query 4" src="https://github.com/user-attachments/assets/7d48a379-057b-4ffb-a68b-fe7d2767d4ed" />
+<img width="356" height="412" alt="MIST 4610 query 3" src="https://github.com/user-attachments/assets/6bad3edc-e2f7-49e1-84ae-da6ac046ae38" />
+<img width="542" height="311" alt="MIST 4610 query 3 answers" src="https://github.com/user-attachments/assets/aec2b58f-f32c-457f-ac33-599f4cccbf85" />
 
-Query 4 lists classrooms with their capacity, total sessions, and number of distinct tutors	who have taught there. It filters for classrooms where 3 or more tutors have taught, helping optimize space and scheduling.
+Query 3 identifies tutors who charge more than the average rate for their specialty and who also teach many sessions. This helps management recognize top-earning, in-demand tutors and decide how to allocate popular instructors.
 
-5. Write a query to find all students with status 'Active' whose most recent assessment score is below 70. For each of these students, return the student’s first name, last name, the assessment_date of their most recent assessment, and the score from that same assessment. Use a subquery to identify the most recent assessment per student. Order the final output by score from lowest to highest, then by student name.
+4. Using a left outer join between guardians, their students, and payments, create a spending summary that shows how much each guardian has paid in total for all of their students. Classify each guardian’s total spending with a CASE expression (for example, “Low”, “Medium”, “High”). Order the results by total spending from highest to lowest.
 
-<img width="608" height="427" alt="query 5" src="https://github.com/user-attachments/assets/063b1dca-3fdb-4384-afee-6f36edb6fa8c" />
+<img width="481" height="402" alt="MIST 4610 query 4" src="https://github.com/user-attachments/assets/ea3989ae-c15d-4e11-8a29-daed5ec93c1d" />
+<img width="545" height="312" alt="MIST 4610 query 4 answers" src="https://github.com/user-attachments/assets/989eaddc-98de-4d8c-b729-92275b77c795" />
 
-Query 5 finds all active students whose latest assessment score is below 70. It shows their most recent score and date, allowing staff to identify students needing academic support.
+Query 4 shows how much each guardian has paid in total and classifies them into spending levels (such as Low, Medium, or High). This lets the center quickly see which families are light users versus heavy users and tailor communication or promotions accordingly.
 
-6. Write a query to list all trainer–trainee tutor pairs where one tutor is being trained by another tutor. For each pair, return the trainer’s first and last name, the trainee’s first and last name, and the trainee’s specialty. Only include pairs where the trainer and trainee have the same specialty. Sort the results by the trainer’s last name and then the trainee’s last name.
-   
-<img width="465" height="427" alt="query 6" src="https://github.com/user-attachments/assets/3aaebc85-7a8b-4ac3-84e4-af517fb80eee" />
+5. Create a report that lists each student who has made at least one payment. For each student, show the student’s first name, last name, their guardian’s first and last name, and the total amount the student has paid. Sort the results by total amount paid in descending order.
 
-Query 6 lists trainer to trainee tutor pairs where both share the same specialty. This makes it easy to see mentorship relationships and ensure proper training alignment among tutors.
+<img width="392" height="361" alt="MIST 4610 query 5" src="https://github.com/user-attachments/assets/0c14aa4f-dbc9-43f4-ab7f-a69a295e9992" />
+<img width="541" height="310" alt="MIST 4610 query 5 answers" src="https://github.com/user-attachments/assets/19647cab-12ab-410c-8997-9674a93cb670" />
 
-7. Write a query to return every student’s first name, last name, and the plan_name of the plan that student is currently enrolled in.
-   
-<img width="472" height="428" alt="query 7" src="https://github.com/user-attachments/assets/04d535d9-6052-41cb-8f8c-18d804716b74" />
-
-Query 7 displays every student with their first name, last name, and the name of the plan they’re enrolled in. It provides a quick overview of which plan each student is on.
-
-8. Write a query to return the first name, last name, and phone number of every guardian who has at least one student whose status is 'Inactive'. Each guardian should only appear once in the results.
-   
-<img width="468" height="428" alt="query 8" src="https://github.com/user-attachments/assets/ed2cbb94-994c-45de-9517-657e10a3f837" />
-
-Query 8 shows the names and phone numbers of guardians who have at least one inactive student. This helps staff contact families regarding inactive enrollments
-
-9. Write a query to list all sessions, showing the session_date, the subject_name taught in that session, the tutor’s first name and last name, and the classroom’s room_name. Order the results by session_date from earliest to latest.
-    
-<img width="473" height="425" alt="query 9" src="https://github.com/user-attachments/assets/3c7be101-c7d0-44fb-a602-24677562dff2" />
-
-Query 9 lists all tutoring sessions with the date, subject, tutor name, and classroom. It helps employees quickly check scheduling details and past session records.
-
-10. Write a query to list each progress report, showing the student’s first name, last name, and the improvement_level recorded on that report.
-    
-<img width="470" height="428" alt="query 10" src="https://github.com/user-attachments/assets/4a29974a-38d9-450c-a346-4d4cc591e337" />
-
-Query 10 shows each student’s name along with their recorded improvement level from progress reports. This allows staff to easily track and discuss student progress.
-
-
-
+Query 5 shows how much each student has paid in total and pairs that with the guardian’s name. This helps staff quickly see which students generate the most revenue, review family payment histories, and prioritize follow-up with high- or low-paying accounts.
 
 ---
+## Visualizations
+<img width="1285" height="650" alt="dashboard_screenshot" src="https://github.com/user-attachments/assets/37c42a62-876e-4e97-a148-e48e0db00cf5" />
+
+<img width="740" height="639" alt="visualization1" src="https://github.com/user-attachments/assets/95584880-1be0-417f-8a3c-734f708f7306" />
+
+### Total Revenue by Plan Type
+
+- Purpose: This chart shows the total revenue generated by each tutoring plan, to show which plans bring in the highest financial contribution to the tutoring center.
+  
+- Relevance: Helps management identify which plans bring in the most revenue and also helps them decide where to focus pricing and refine marketing strategies. 
+
+<img width="787" height="725" alt="visualization2" src="https://github.com/user-attachments/assets/19bd7703-5ed6-4649-a38e-807d790c1eee" />
+
+### Tutors by Subject Specialty
+
+- Purpose: This visualization displays how tutors are distributed across different subjects, and the number of instructors available in each speciality.
+  
+- Relevance: Helps management see overview of staffing within the center. Also reveals staffing balance across different subjects, which helps management determine hiring needs and ensure adequate coverage for high-demand areas. 
+
+<img width="787" height="665" alt="visualization3" src="https://github.com/user-attachments/assets/8294f161-120f-4d34-bd34-7c1dff36da83" />
+
+### Student Improvement Rate by Plan
+
+- Purpose: This chart shows the percentage of students demonstrating significant or moderate academic improvement within each tutoring plan.
+  
+- Relevance: Helps management evaluate which plans are the most effective, which then they can further make adjustments to their curriculum and recommendations for families seeking better academic outcomes. 
+
