@@ -21,7 +21,8 @@ Explanation of Data Model:
 This database is meant to help run a tutoring center by keeping track of students, their parents, tutors, subjects, tutoring plans, scheduled sessions, payments, and grades. The student entity is the most important part of the model. It is linked to a parent or guardian who is in charge of enrollment and payment. Also, each student is in a specific plan that sets the costs and the number of tutoring sessions they can have. Tutors teach sessions in a classroom and link them to a subject. A bridge entity connects students to the sessions they attend, which keeps track of attendance. The model also keeps track of students' academic progress by connecting them to tests and progress reports that show how they are doing over time. Additionally, payment records capture financial transactions made by guardians on behalf of the student. The model does not keep track of things like tutor pay, detailed curriculum content, real-time scheduling conflicts, messaging/communication logs, or external school data that isn't related to tutoring operations. Overall, this design helps a tutoring center with both academic and administrative tasks. It lets you see how many students are participating, how much work the tutors have, how much demand there is for each subject, and financial performance of the center. 
 
 
-<img width="1181" height="1049" alt="MIST 4610 Project 1 Data Model" src="https://github.com/user-attachments/assets/8d3659d1-a135-4fbe-aea0-9c47ab28b95a" /> 
+<img width="962" height="1312" alt="MIST 4610 Project 2" src="https://github.com/user-attachments/assets/14c5fe7d-82a2-4b29-be8b-0069960be94f" />
+
 
 ---
 
@@ -31,13 +32,13 @@ This database is meant to help run a tutoring center by keeping track of student
 
 <img width="587" height="534" alt="image" src="https://github.com/user-attachments/assets/115515bb-3038-45c3-aa2d-663f7b94dd4e" />
 
-<img width="582" height="535" alt="image" src="https://github.com/user-attachments/assets/d4d4d5be-acd8-42f4-84ab-d05e35db89a1" />
+<img width="571" height="547" alt="image" src="https://github.com/user-attachments/assets/a9f0a85a-8250-4fed-9b34-ffdd6a72a0f4" />
 
 <img width="618" height="287" alt="image" src="https://github.com/user-attachments/assets/e89c65e5-bdf4-4f1f-87d7-870d59a518c6" />
 
 <img width="611" height="456" alt="image" src="https://github.com/user-attachments/assets/c8532f59-f436-4b9f-8d33-b7bd3705cb32" />
 
-<img width="576" height="482" alt="image" src="https://github.com/user-attachments/assets/80d7b983-d8a8-4b1d-a718-c8f0657bf852" />
+<img width="574" height="497" alt="image" src="https://github.com/user-attachments/assets/31efe8a7-5280-461d-8c47-334b1f071c7f" />
 
 <img width="566" height="404" alt="image" src="https://github.com/user-attachments/assets/474d9650-ca50-4fef-a8cd-0cf9d4842a2a" />
 
