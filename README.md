@@ -59,6 +59,7 @@ This database is meant to help run a tutoring center by keeping track of student
 | Inner join                |    x    |         |    x    |         |    x    |
 | Group By / Aggregation    |    x    |    x    |    x    |    x    |    x    |
 | Subquery                  |         |         |    x    |         |         |
+| Ordering / Sorting        |    x    |    x    |    x    |    x    |    x    |
 | CASE logic                |         |    x    |         |    x    |         |
 
 1. Using an inner join between the student, guardian, and payment tables, produce a report of active students and their guardians that shows each student’s maximum payment amount, but only for students who have made at least one payment greater than 200, ordered from highest to lowest maximum payment.
