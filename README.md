@@ -124,5 +124,9 @@ Query 5 shows how much each student has paid in total and pairs that with the gu
 
 - Purpose: This chart shows the percentage of students demonstrating significant or moderate academic improvement within each tutoring plan.
   
-- Relevance: Helps management evaluate which plans are the most effective, which then they can further make adjustments to their curriculum and recommendations for families seeking better academic outcomes. 
+- Relevance: Helps management evaluate which plans are the most effective, which then they can further make adjustments to their curriculum and recommendations for families seeking better academic outcomes.
+
+## Database Information
+
+Name of the database:...
 
