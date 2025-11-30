@@ -102,6 +102,8 @@ Query 5 shows how much each student has paid in total and pairs that with the gu
 ## Claude Visualizations
 <img width="1285" height="650" alt="dashboard_screenshot" src="https://github.com/user-attachments/assets/37c42a62-876e-4e97-a148-e48e0db00cf5" />
 
+### Dashboard
+
 <img width="740" height="639" alt="visualization1" src="https://github.com/user-attachments/assets/95584880-1be0-417f-8a3c-734f708f7306" />
 
 ### Total Revenue by Plan Type
@@ -128,5 +130,5 @@ Query 5 shows how much each student has paid in total and pairs that with the gu
 
 ## Database Information
 
-Name of the database:...
+Name of the database: cs_bss92756
 
